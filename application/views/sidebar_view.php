@@ -43,6 +43,11 @@
                     <i class="fa fa-calendar"></i> <span>Kehadiran</span>
                 </a>
             </li>
+            <li class="<?php if($this->uri->uri_string() == 'kehadiran/jumlah'){ echo 'active';}?>">
+                <a href="<?php echo base_url('kehadiran/jumlah');?>">
+                    <i class="fa fa-calendar"></i> <span>Jumlah Kehadiran</span>
+                </a>
+            </li>
             <li class="<?php if($this->uri->uri_string() == 'user'){ echo 'active';}?>
                 <?php if($this->uri->uri_string() == 'user/tambah'){ echo 'active';}?>
                 <?php if($this->uri->uri_string() == 'user/edit/'.$this->uri->segment('3')){ echo 'active';}?>">

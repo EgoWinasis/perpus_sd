@@ -6,7 +6,7 @@
 <!-- Content Wrapper. Contains page content -->
 <!-- Content Header (Page header) -->
 <div class="content-wrapper">
-  
+
   <section class="content-header">
     <h1>
       Dashboard <small>Control panel</small>
@@ -83,6 +83,88 @@
 
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">Grafik Kunjungan Perpustakaan Tahun <?= date('Y')?></h3>
+          </div>
+          <div class="card-body">
+            <div class="chart">
+              <canvas id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+            </div>
+          </div>
+          <!-- /.card-body -->
+        </div>
+      </div>
+    </div>
   </section>
 </div>
+
+<script>
+  $(function() {
+    var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
+
+    var areaChartData = {
+      labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober' , 'November' , 'Desember'],
+      datasets: [{
+          label: 'Data Kunjungan',
+          backgroundColor: 'rgba(60,141,188,0.9)',
+          borderColor: 'rgba(60,141,188,0.8)',
+          pointRadius: false,
+          pointColor: '#3b8bba',
+          pointStrokeColor: 'rgba(60,141,188,1)',
+          pointHighlightFill: '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data: [
+            <?= $count_januari?>,
+            <?= $count_februari?>,
+            <?= $count_maret?>,
+            <?= $count_april?>,
+            <?= $count_mei?>,
+            <?= $count_juni?>,
+            <?= $count_juli?>,
+            <?= $count_agustus?>,
+            <?= $count_september?>,
+            <?= $count_oktober?>,
+            <?= $count_november?>,
+            <?= $count_desember?>,
+            
+            
+            ]
+        },
+        
+      ]
+    }
+
+    var areaChartOptions = {
+      maintainAspectRatio: false,
+      responsive: true,
+      legend: {
+        display: false
+      },
+      scales: {
+        xAxes: [{
+          gridLines: {
+            display: false,
+          }
+        }],
+        yAxes: [{
+          gridLines: {
+            display: false,
+          }
+        }]
+      }
+    }
+
+    // This will get the first returned node in the jQuery collection.
+    new Chart(areaChartCanvas, {
+      type: 'line',
+      data: areaChartData,
+      options: areaChartOptions
+    })
+  })
+</script>
 <!-- /.content -->

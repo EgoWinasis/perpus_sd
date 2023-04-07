@@ -253,4 +253,22 @@ class Kehadiran extends CI_Controller
 		}
 		echo json_encode($res_siswa);
 	}
+	public function jumlah()
+	{
+		$this->data['idbo'] = $this->session->userdata('ses_id');
+
+		// $this->data['siswa'] = $this->M_Admin->get_table('tbl_siswa');
+		$this->data['siswa'] =  $this->db->query("SELECT * FROM `tbl_siswa` ORDER BY kode_anggota")->result_array();
+		// $res =  $this->db->query("SELECT COUNT(tgl_kehadiran) FROM `tbl_kehadiran` WHERE siswa_id LIKE '%" . $this->data['siswa'][0]['id_siswa']."%'")->result_array();
+			
+		// var_dump($res[0]['COUNT(tgl_kehadiran)']);
+		// 	die();
+
+			$this->data['title_web'] = 'Data Jumlah Kehadiran Siswa ' ;
+			$this->load->view('header_view', $this->data);
+			$this->load->view('sidebar_view', $this->data);
+			$this->load->view('kehadiran/jumlah_view', $this->data);
+			$this->load->view('footer_view', $this->data);
+		
+	}
 }
