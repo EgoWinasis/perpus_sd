@@ -76,7 +76,7 @@
                             <div class="pull-right">
                                 <button id="submit" type="submit" class="btn btn-primary btn-md">Submit</button>
                         </form>
-                        <a href="<?= base_url('user'); ?>" class="btn btn-danger btn-md">Kembali</a>
+                        <a href="<?= base_url('kehadiran'); ?>" class="btn btn-danger btn-md">Kembali</a>
                     </div>
                 </div>
             </div>
