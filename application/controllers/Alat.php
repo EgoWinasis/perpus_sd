@@ -19,7 +19,7 @@ class Alat extends CI_Controller
 	public function index()
 	{
 		$this->data['idbo'] = $this->session->userdata('ses_id');
-		$this->data['alat'] =  $this->db->query("SELECT * FROM tbl_alat ORDER BY id_alat DESC");
+		$this->data['alat'] =  $this->db->query("SELECT * FROM tbl_alat ORDER BY kode_alat");
 		$this->data['title_web'] = 'Data Alat';
 		$this->load->view('header_view', $this->data);
 		$this->load->view('sidebar_view', $this->data);

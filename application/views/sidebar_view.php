@@ -77,6 +77,15 @@
                             
                         </a>
                     </li>
+                    <li class="<?php if($this->uri->uri_string() == 'data/bukudigital'){ echo 'active';}?>
+                        <?php if($this->uri->uri_string() == 'data/bukutambah'){ echo 'active';}?>
+                        <?php if($this->uri->uri_string() == 'data/bukudetail/'.$this->uri->segment('3')){ echo 'active';}?>
+                        <?php if($this->uri->uri_string() == 'data/bukuedit/'.$this->uri->segment('3')){ echo 'active';}?>">
+                        <a href="<?php echo base_url("data/bukudigital");?>" class="cursor">
+                            <span class="fa fa-book"></span> Buku Digital
+                            
+                        </a>
+                    </li>
                    
                     <li class=" <?php if($this->uri->uri_string() == 'data/jumlah'){ echo 'active';}?>">
                         <a href="<?php echo base_url("data/jumlah");?>" class="cursor">
@@ -139,6 +148,7 @@
             <li class="treeview 
                 <?php if($this->uri->uri_string() == 'transaksi'){ echo 'active';}?>
                 <?php if($this->uri->uri_string() == 'transaksi/kembali'){ echo 'active';}?>
+                <?php if($this->uri->uri_string() == 'transaksi/digital'){ echo 'active';}?>
                 <?php if($this->uri->uri_string() == 'transaksi/pinjam'){ echo 'active';}?>
                 <?php if($this->uri->uri_string() == 'transaksi/detailpinjam/'.$this->uri->segment('3')){ echo 'active';}?>
                 <?php if($this->uri->uri_string() == 'transaksi/kembalipinjam/'.$this->uri->segment('3')){ echo 'active';}?>">
@@ -161,6 +171,11 @@
                     <li class="<?php if($this->uri->uri_string() == 'transaksi/kembali'){ echo 'active';}?>">
                         <a href="<?php echo base_url("transaksi/kembali");?>" class="cursor">
                             <span class="fa fa-download"></span> Pengembalian
+                        </a>
+                    </li>
+                    <li class="<?php if($this->uri->uri_string() == 'transaksi/digital'){ echo 'active';}?>">
+                        <a href="<?php echo base_url("transaksi/digital");?>" class="cursor">
+                            <span class="fa fa-book"></span>Buku Digital
                         </a>
                     </li>
                 </ul>

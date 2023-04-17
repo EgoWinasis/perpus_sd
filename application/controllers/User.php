@@ -19,7 +19,8 @@ class User extends CI_Controller
 	public function index()
 	{
 		$this->data['idbo'] = $this->session->userdata('ses_id');
-		$this->data['user'] = $this->M_Admin->get_table('tbl_siswa');
+		// $this->data['user'] = $this->M_Admin->get_table('tbl_siswa');
+		$this->data['user'] =  $this->db->query("SELECT * FROM tbl_siswa ORDER BY kode_anggota")->result_array();
 
 		$this->data['title_web'] = 'Data Siswa ';
 		$this->load->view('header_view', $this->data);

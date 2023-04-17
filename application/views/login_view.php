@@ -29,18 +29,35 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <style type="text/css">
+    .active {
+      background-color: #4CAF50 !important;
+      color: white;
+    }
+
+    /* .inactive {
+      background: red;
+      color: white;
+    } */
+
     .navbar-inverse {
       background-color: #333;
     }
+
     .text-stroke {
-  /* Prefix required. Even Firefox only supports the -webkit- prefix */
-  -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: black;
-  
-}
+      /* Prefix required. Even Firefox only supports the -webkit- prefix */
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: black;
+
+    }
 
     .navbar-color {
       color: #fff;
+    }
+
+    .login-page {
+      overflow-y: hidden;
+      background: url('assets_style/image/bg3.png') no-repeat;
+      background-size: 100%;
     }
 
     blink,
@@ -53,13 +70,35 @@
         opacity: 0;
       }
     }
+
+    @media screen and (min-width: 300px) and (max-width:799px) {
+      .login-page {
+        background: url('assets_style/image/Buku-mobile.png') no-repeat;
+        background-size: 100%;
+        overflow-y: hidden;
+      }
+
+      .login-logo {
+        font-size: 30px;
+      }
+    }
+    @media screen and (min-width: 800px) and (max-width:1200px) {
+      .login-page {
+        background: url('assets_style/image/Buku-tab.png') no-repeat;
+        background-size: 100%;
+        overflow-y: hidden;
+      }
+
+      .login-logo {
+        font-size: 30px;
+      }
+    }
   </style>
   <link rel="icon" type="image/x-icon" href="<?php echo base_url('assets_style/image/cirlce.png'); ?>">
 
 </head>
 
-<body class="hold-transition login-page" style="overflow-y: hidden;background:url(
-  '<?php echo base_url('assets_style/image/bg3.png'); ?>')no-repeat;background-size:100%;">
+<body class="hold-transition login-page">
   <div class="login-box">
     <br />
     <div class="login-logo">
@@ -71,6 +110,17 @@
       <p class="login-box-msg" style="font-size:16px;"></p>
       <form action="<?= base_url('login/auth'); ?>" method="POST">
         <div class="form-group has-feedback">
+          <div class="btn-group btn-group-justified" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+              <button type="button" value="petugas" class="active btn_level btn btn-default">Petugas</button>
+            </div>
+            <div class="btn-group" role="group">
+              <button type="button" value="anggota" class="inactive btn_level btn btn-default">Anggota</button>
+            </div>
+          </div>
+        </div>
+        <input type="hidden" name="level" id="level" value="petugas">
+        <div class="form-group has-feedback">
           <input type="text" class="form-control" placeholder="Username" id="user" name="user" required="required" autocomplete="off">
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
@@ -80,13 +130,7 @@
         </div>
         <div class="row">
           <div class="col-xs-8">
-            <!-- /.col
-          <div class="checkbox icheck">
-            <label>
-              <input type="checkbox" name="remember" id="remember" value="R1"> Remember Me
-            </label>
-          </div>-->
-            <!-- /.social-auth-links -->
+            
           </div>
           <div class="col-xs-4">
             <button type="submit" id="loding" class="btn btn-primary btn-block btn-flat">Sign In</button>
@@ -101,8 +145,8 @@
     <footer>
       <div class="login-box-body text-center bg-blue">
         <a style="color: yellow;"> Copyright &copy; Kampus Mengajar Angkatan 5 - <?php echo date("Y"); ?>
-        <br>
-        <a style="color: yellow;"> SDN GETASKEREP 01
+          <br>
+          <a style="color: yellow;"> SDN GETASKEREP 01
       </div>
     </footer>
   </div>
@@ -113,8 +157,20 @@
   <script src="<?php echo base_url('assets_style/assets/bower_components/jquery/dist/jquery.min.js'); ?>"></script>
   <!-- Bootstrap 3.3.7 -->
   <script src="<?php echo base_url('assets_style/assets/bower_components/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
+  <script>
+    $(document).ready(function() {
+      $('.btn_level').click(function() {
+        $('.btn_level').removeClass('active').addClass('inactive');
+        $(this).removeClass('inactive').addClass('active');
 
+        let level = $(this).val();
+        $('#level').val(level);
+
+      });
+    })
+
+    
+  </script>
 </body>
 
 </html>
-

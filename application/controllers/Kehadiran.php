@@ -77,23 +77,34 @@ class Kehadiran extends CI_Controller
 
 		$tanggal = htmlentities($this->input->post('tanggal', TRUE));
 		$id_siswa = $_COOKIE['dataKehadiran'];
+		$kehadiran = $this->db->query("SELECT * FROM tbl_kehadiran WHERE siswa_id = ". $id_siswa . "  AND tgl_kehadiran = '". $tanggal . "'") ;
+		$rowKehadiran = $kehadiran->num_rows(); 
 
+		if($rowKehadiran == 0){
 
-
-		$data = array(
-			'id_kehadiran' => '',
-			'tgl_kehadiran' => $tanggal,
-			'siswa_id' => $id_siswa
-
-		);
-
-		$this->db->insert('tbl_kehadiran', $data);
-
-		if ($this->$_SESSION['pesan'] == null) {
-			$this->session->set_flashdata('pesan', '<div id="notifikasi"><div class="alert alert-success">
-				<p> Tambah kehadiran telah berhasil !</p>
-				</div></div>');
+			$data = array(
+				'id_kehadiran' => '',
+				'tgl_kehadiran' => $tanggal,
+				'siswa_id' => $id_siswa
+	
+			);
+	
+			$this->db->insert('tbl_kehadiran', $data);
+			if ($this->$_SESSION['pesan'] == null) {
+				$this->session->set_flashdata('pesan', '<div id="notifikasi"><div class="alert alert-success">
+					<p> Tambah kehadiran telah berhasil !</p>
+					</div></div>');
+			}
+		}else{
+			if ($this->$_SESSION['pesan'] == null) {
+				$this->session->set_flashdata('pesan', '<div id="notifikasi"><div class="alert alert-warning">
+					<p> Data kehadiran sudah ada !</p>
+					</div></div>');
+			}
 		}
+
+
+
 		redirect(base_url('kehadiran'));
 	}
 

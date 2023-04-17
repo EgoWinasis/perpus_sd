@@ -32,12 +32,6 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets_style/assets/plugins/timepicker/bootstrap-timepicker.min.css">
   <!-- Sweetalert -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets_style/assets/plugins/sweetalert/sweetalert2.css">
-  <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets_style/assets/plugins/plugins/daterangepicker/daterangepicker.css"> -->
-  <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets_style/assets/plugins/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"> -->
-  <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets_style/assets/plugins/plugins/select2/css/select2.min.css"> -->
-  <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets_style/assets/plugins/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css"> -->
-  <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets_style/assets/plugins/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css"> -->
-  <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets_style/assets/plugins/plugins/bs-stepper/css/bs-stepper.min.css"> -->
 
 
   <!-- bootstrap datepicker -->

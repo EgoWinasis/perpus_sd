@@ -473,4 +473,23 @@ class Transaksi extends CI_Controller
 		}
 		return -1;
 	}
+
+	public function digital()
+	{
+		$this->data['title_web'] = 'Data Pinjam Buku Digital';
+		$this->data['idbo'] = $this->session->userdata('ses_id');
+
+		if ($this->session->userdata('level') == 'Anggota') {
+			$this->data['pinjam'] = $this->db->query("SELECT * FROM tbl_pinjam_digital ORDER BY tgl_baca");
+		} else {
+			$this->data['pinjam'] = $this->db->query("SELECT * FROM tbl_pinjam_digital ORDER BY tgl_baca");
+		}
+
+		$this->load->view('header_view', $this->data);
+		$this->load->view('sidebar_view', $this->data);
+		$this->load->view('pinjam/pinjam_digital_view', $this->data);
+		$this->load->view('footer_view', $this->data);
+	}
+
+
 }
