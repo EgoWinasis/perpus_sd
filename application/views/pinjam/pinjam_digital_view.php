@@ -10,19 +10,18 @@
     </ol>
   </section>
   <section class="content">
-	<?php if(!empty($this->session->flashdata())){ echo $this->session->flashdata('pesan');}?>
-	<?php $this->session->set_userdata('pesan', null); ?>
+	
 	<div class="row">
 	    <div class="col-md-12">
 	        <div class="box box-primary">
-               
-				<!-- /.box-header -->
+               <div class="box-header with-border">
+                </div>
+				
 				<div class="box-body">
                     <br/>
-					<div class="table-responsive">
+                    <div class="table-responsive">
                     <table id="example1" class="table table-bordered table-striped table" width="100%">
-                        <thead>
-                            <tr>
+                        <thead>                            <tr>
                                 <th>No</th>
                                 <th>Kode Anggota</th>
                                 <th>Nama Anggota</th>
