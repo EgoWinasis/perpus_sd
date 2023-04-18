@@ -504,14 +504,20 @@ class Data extends CI_Controller
 				if ($this->upload->do_upload('lampiran')) {
 					$this->upload->data();
 					$file2 = array('upload_data' => $this->upload->data());
-					$this->db->set('lampiran', $nameFolder);
 					$pdf = new Spatie\PdfToImage\Pdf($_SERVER['DOCUMENT_ROOT'] . '/assets_style/image/buku/lampiran/' . $nameFolder . '/' . $file2['upload_data']['file_name']);
 					$totalPage = $pdf->getNumberOfPages(); //returns an int
-					$this->db->set('total_hal', $totalPage);
 					for ($i = 1; $i <=  $totalPage; $i++) {
 						$pdf->setOutputFormat('png')
 							->setPage($i)
 							->saveImage($config['upload_path']);
+					}
+
+					list($width, $height) = getimagesize($config['upload_path'] . '/' . '5.png');
+					if ($width > $height) {
+						$this->cropImage($nameFolder);
+					} else {
+						$this->db->set('total_hal', $totalPage);
+						$this->db->set('lampiran', $nameFolder);
 					}
 				} else {
 					$this->session->set_flashdata('pesan', '<div id="notifikasi"><div class="alert alert-danger">
@@ -595,14 +601,22 @@ class Data extends CI_Controller
 					}
 
 					$file2 = array('upload_data' => $this->upload->data());
-					$this->db->set('lampiran', $nameFolder);
+					
 					$pdf = new Spatie\PdfToImage\Pdf($_SERVER['DOCUMENT_ROOT'] . '/assets_style/image/buku/lampiran/' . $nameFolder . '/' . $file2['upload_data']['file_name']);
 					$totalPage = $pdf->getNumberOfPages(); //returns an int
-					$this->db->set('total_hal', $totalPage);
+				
 					for ($i = 1; $i <=  $totalPage; $i++) {
 						$pdf->setOutputFormat('png')
 							->setPage($i)
 							->saveImage($config['upload_path']);
+					}
+
+					list($width, $height) = getimagesize($config['upload_path'] . '/' . '5.png');
+					if ($width > $height) {
+						$this->cropImage($nameFolder);
+					} else {
+						$this->db->set('total_hal', $totalPage);
+						$this->db->set('lampiran', $nameFolder);
 					}
 				} else {
 
@@ -670,5 +684,50 @@ class Data extends CI_Controller
 		$this->data['buku'] =  $this->db->query("SELECT * FROM tbl_buku_digital WHERE id_buku = ".$id )->result_array();
 		
 		$this->load->view('buku/read_view', $this->data);
+	}
+
+	public function cropImage(string $nameFolder)
+	{
+
+		//get all image
+		$nameFolder = $nameFolder;
+		$directory = $_SERVER['DOCUMENT_ROOT'] . '/assets_style/image/buku/lampiran/' . $nameFolder;
+		$images = glob($directory . "/*.png");
+
+		$newFolder = random_string('numeric', 5) . str_replace('-', '', date('Y-m-d'));
+		mkdir('./assets_style/image/buku/lampiran/' . $newFolder, 0777, TRUE);
+		$index = 1;
+		for ($i = 1; $i <= count($images); $i++) {
+			list($width, $height) = getimagesize($directory . '/' . $i . '.png');
+			if ($width > $height) {
+				// Create an imagick object
+				$image = new Imagick($directory . '/' . $i . '.png');
+				// Imagick function to crop Image 
+				$image->cropImage($image->getImageWidth() / 2, $image->getImageHeight(), 0, 0);
+				$image->writeImage($_SERVER['DOCUMENT_ROOT'] . '/assets_style/image/buku/lampiran/' . $newFolder . '/' . $index . '.png');
+
+				$image = new Imagick($directory . '/' . $i . '.png');
+				$image->cropImage($image->getImageWidth() / 2, $image->getImageHeight(), $image->getImageWidth() / 2, 0);
+				$image->writeImage($_SERVER['DOCUMENT_ROOT'] . '/assets_style/image/buku/lampiran/' . $newFolder . '/' . ($index + 1) . '.png');
+
+				$index += 1;
+			} else {
+				$image = new Imagick($directory . '/' . $i . '.png');
+				$image->writeImage($_SERVER['DOCUMENT_ROOT'] . '/assets_style/image/buku/lampiran/' . $newFolder . '/' . $index . '.png');
+			}
+
+			$index++;
+		}
+
+		$lampiran = './assets_style/image/buku/lampiran/' . $nameFolder;
+		if (is_dir($lampiran)) {
+			array_map('unlink', glob("$lampiran/*.*"));
+			rmdir($lampiran);
+		}
+
+		$directory = $_SERVER['DOCUMENT_ROOT'] . '/assets_style/image/buku/lampiran/' . $newFolder;
+		$images = glob($directory . "/*.png");
+		$this->db->set('total_hal', count($images));
+		$this->db->set('lampiran', $newFolder);
 	}
 }
