@@ -54,7 +54,7 @@ function getKategoriAlat($conn, $idKategori)
             <div class="col-md-12">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-
+                    <a href="<?php echo base_url('cetak/jumlah_alat'); ?>" target="_blank"><button class="btn btn-warning"> <i class="fa fa-print"></i> Data Jumlah Alat</button></a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">

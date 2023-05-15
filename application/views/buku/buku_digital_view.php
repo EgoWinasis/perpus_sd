@@ -23,6 +23,9 @@
                             <a href="<?php echo base_url('data/digitaltambah'); ?>"><button class="btn btn-primary">
                                     <i class="fa fa-plus"> </i> Tambah Buku</button></a>
                         <?php } ?>
+
+                        <a href="<?php echo base_url('cetak/buku_digital') ?>" target="_blank"><button class="btn btn-warning"> <i class="fa fa-print"></i> Buku Digital</button></a>
+
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">

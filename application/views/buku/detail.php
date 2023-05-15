@@ -55,6 +55,10 @@
 							<td><?= $buku->jml;?></td>
 						</tr>
 						<tr>
+							<td>Kondisi Buku</td>
+							<td><?= $buku->kondisi;?></td>
+						</tr>
+						<tr>
 							<td>Jumlah Pinjam</td>
 							<td>
 								<?php

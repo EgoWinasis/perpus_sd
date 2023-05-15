@@ -46,7 +46,13 @@
                                         <label>Judul Buku</label>
                                         <input type="text" class="form-control" required name="title" placeholder="Contoh : Cara Cepat Belajar Pemrograman Web">
                                     </div>
-
+                                    <div class="form-group">
+                                        <label>Kondisi</label>
+                                        <select name="kondisi" class="form-control" required="required">
+                                            <option value="Layak" selected>Layak</option>
+                                            <option value="Rusak">Rusak</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
@@ -72,6 +78,7 @@
                             <div class="pull-right">
                                 <input type="hidden" name="tambah" value="tambah">
                                 <button type="submit" class="btn btn-primary btn-md">Submit</button>
+                            </div>
                         </form>
                         <a href="<?= base_url('data'); ?>" class="btn btn-danger btn-md">Kembali</a>
                     </div>

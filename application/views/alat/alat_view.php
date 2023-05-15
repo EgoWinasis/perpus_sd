@@ -26,6 +26,9 @@
 
                         <button id="print_button" class="btn btn-success ">
                             <i class="fa fa-print"></i> Cetak Label</button>
+
+                        <a href="<?php echo base_url('cetak/alat') ?>" target="_blank"><button class="btn btn-warning"> <i class="fa fa-print"></i> Alat</button></a>
+
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -39,6 +42,7 @@
                                         <th>Nama Alat</th>
                                         <th>Stok</th>
                                         <th>Dipinjam</th>
+                                        <th>Kondisi</th>
                                         <th>Tanggal Masuk</th>
                                         <th style="width: 50px;">Cetak Label
                                             <input class="form-check-input" type="checkbox" id="checkAll">
@@ -65,6 +69,7 @@
                                                 }
                                                 ?>
                                             </td>
+                                            <td><?= $isi['kondisi']; ?></td>
                                             <td><?= $isi['tgl_masuk']; ?></td>
                                             <td class="text-center">
                                                 <div class="form-check">

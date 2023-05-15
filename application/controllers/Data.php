@@ -148,6 +148,7 @@ class Data extends CI_Controller
 				'penerbit' => htmlentities($post['penerbit']),
 				'thn_buku' => htmlentities($post['thn']),
 				'jml' => htmlentities($post['jml']),
+				'kondisi' => htmlentities($post['kondisi']),
 				'tgl_masuk' => date('Y-m-d H:i:s')
 			);
 
@@ -196,6 +197,7 @@ class Data extends CI_Controller
 						'penerbit' => htmlentities($post['penerbit']),
 						'thn_buku' => htmlentities($post['thn']),
 						'jml' => htmlentities($post['jml']),
+						'kondisi' => htmlentities($post['kondisi']),
 						'tgl_masuk' => date('Y-m-d H:i:s')
 					);
 				} else {
@@ -209,6 +211,7 @@ class Data extends CI_Controller
 						'penerbit' => htmlentities($post['penerbit']),
 						'thn_buku' => htmlentities($post['thn']),
 						'jml' => htmlentities($post['jml']),
+						'kondisi' => htmlentities($post['kondisi']),
 						'tgl_masuk' => date('Y-m-d H:i:s')
 					);
 				}

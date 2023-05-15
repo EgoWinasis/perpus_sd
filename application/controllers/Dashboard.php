@@ -88,8 +88,10 @@ class Dashboard extends CI_Controller {
 		$this->data['title_web'] = 'Dashboard ';
 		$this->data['count_pengguna']=$this->db->query("SELECT * FROM tbl_siswa")->num_rows();
 		$this->data['count_buku']=$this->db->query("SELECT * FROM tbl_buku")->num_rows();
+		$this->data['count_buku_digital']=$this->db->query("SELECT * FROM tbl_buku_digital")->num_rows();
 		$this->data['count_alat']=$this->db->query("SELECT * FROM tbl_alat")->num_rows();
 		$this->data['count_pinjam']=$this->db->query("SELECT * FROM tbl_pinjam WHERE status = 'Dipinjam'")->num_rows();
+		$this->data['count_pinjam_alat']=$this->db->query("SELECT * FROM tbl_pinjam_alat WHERE status = 'Dipinjam'")->num_rows();
 		// $this->data['count_kembali']=$this->db->query("SELECT * FROM tbl_pinjam WHERE status = 'Di Kembalikan'")->num_rows();
 		$this->load->view('header_view',$this->data);
 		$this->load->view('sidebar_view',$this->data);

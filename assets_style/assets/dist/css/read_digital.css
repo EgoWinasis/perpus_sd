@@ -104,8 +104,8 @@ section {
 
 body {
 	line-height: 1;
-	background: url(../../../image/bookcase/backGroundImgURL.png) no-repeat;
-
+	/* background: url(../../../image/bookcase/backGroundImgURL.png) no-repeat; */
+	background: linear-gradient(to bottom, #C2A6E5, #D8B8FF);
 
 }
 
@@ -512,7 +512,6 @@ table {
 
 .front,
 .back {
-	background-color: white;
 	position: absolute;
 	width: 100%;
 	height: 100%;

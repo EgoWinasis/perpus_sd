@@ -21,8 +21,10 @@
                         <a href="user/tambah"><button class="btn btn-primary"><i class="fa fa-plus"> </i> Tambah Siswa</button></a>
 
                         <button id="print_button" class="btn btn-success ">
-                            <i class="fa fa-print"></i> Cetak Kartu</button>
-
+                            <i class="fa fa-print"></i> Kartu</button>
+                        
+                        <a href="cetak/cetak_siswa" target="_blank"><button class="btn btn-warning"> <i class="fa fa-print"></i> Data Siswa</button></a>
+                        
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">

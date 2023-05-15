@@ -77,7 +77,7 @@ class Kehadiran extends CI_Controller
 
 		$tanggal = htmlentities($this->input->post('tanggal', TRUE));
 		$id_siswa = $_COOKIE['dataKehadiran'];
-		$kehadiran = $this->db->query("SELECT * FROM tbl_kehadiran WHERE siswa_id = ". $id_siswa . "  AND tgl_kehadiran = '". $tanggal . "'") ;
+		$kehadiran = $this->db->query("SELECT * FROM tbl_kehadiran WHERE siswa_id = '". $id_siswa . "'  AND tgl_kehadiran = '". $tanggal . "'") ;
 		$rowKehadiran = $kehadiran->num_rows(); 
 
 		if($rowKehadiran == 0){

@@ -38,6 +38,10 @@
 							<td><?= $alat->jumlah;?></td>
 						</tr>
 						<tr>
+							<td>Kondisi</td>
+							<td><?= $alat->kondisi;?></td>
+						</tr>
+						<tr>
 							<td>Jumlah Pinjam</td>
 							<td>
 								<?php

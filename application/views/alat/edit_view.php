@@ -43,14 +43,22 @@
                                         <label>Jumlah alat</label>
                                         <input type="number" class="form-control" min="1" required value="<?= $alat->jumlah; ?>" name="jml" value="1" readonly placeholder="Jumlah alat : 1">
                                     </div>
+                                    <div class="form-group">
+                                        <label>Kondisi</label>
+                                        <select name="kondisi" class="form-control" required="required">
+                                            <option value="Layak" <?= $alat->kondisi == "Layak" ? "Selected" : "" ?>>Layak</option>
+                                            <option value="Rusak" <?= $alat->kondisi == "Rusak" ? "Selected" : "" ?>>Rusak</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col-sm-2"></div>
                             </div>
 
                             <div class="pull-right">
-                            <input type="hidden" name="id_kategori_old" value="<?= $alat->id_kategori; ?>">
+                                <input type="hidden" name="id_kategori_old" value="<?= $alat->id_kategori; ?>">
                                 <input type="hidden" name="edit" value="<?= $alat->id_alat; ?>">
                                 <button type="submit" class="btn btn-primary btn-md">Submit</button>
+                            </div>
                         </form>
                         <a href="<?= base_url('alat'); ?>" class="btn btn-danger btn-md">Kembali</a>
                     </div>

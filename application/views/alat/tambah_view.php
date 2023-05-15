@@ -30,8 +30,8 @@
                                             <?php } ?>
                                         </select>
                                     </div>
-                                    
-                                
+
+
                                     <div class="form-group">
                                         <label>Nama Alat</label>
                                         <input type="text" class="form-control" required name="title" placeholder="Contoh : KIT Bentang Alam">
@@ -41,12 +41,20 @@
                                         <label>Jumlah</label>
                                         <input type="number" class="form-control" min="1" required name="jml" value="1" readonly placeholder="Jumlah : 1">
                                     </div>
+                                    <div class="form-group">
+                                        <label>Kondisi</label>
+                                        <select name="kondisi" class="form-control" required="required">
+                                            <option value="Layak" selected>Layak</option>
+                                            <option value="Rusak">Rusak</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col-sm-2"></div>
                             </div>
                             <div class="pull-right">
                                 <input type="hidden" name="tambah" value="tambah">
                                 <button type="submit" class="btn btn-primary btn-md">Submit</button>
+                            </div>
                         </form>
                         <a href="<?= base_url('alat'); ?>" class="btn btn-danger btn-md">Kembali</a>
                     </div>

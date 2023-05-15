@@ -82,6 +82,7 @@
         font-size: 30px;
       }
     }
+
     @media screen and (min-width: 800px) and (max-width:1200px) {
       .login-page {
         background: url('assets_style/image/Buku-tab.png') no-repeat;
@@ -130,7 +131,7 @@
         </div>
         <div class="row">
           <div class="col-xs-8">
-            
+
           </div>
           <div class="col-xs-4">
             <button type="submit" id="loding" class="btn btn-primary btn-block btn-flat">Sign In</button>
@@ -169,7 +170,14 @@
       });
     })
 
-    
+
+    $(document).ready(function() {
+      var screenWidth = screen.width;
+      var screenHeight = screen.height;
+      document.cookie = "width=" + screenWidth;
+      document.cookie = "height=" + screenHeight;
+      
+    });
   </script>
 </body>
 

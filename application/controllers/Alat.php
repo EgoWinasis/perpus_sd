@@ -139,6 +139,7 @@ class Alat extends CI_Controller
 				'id_kategori' => htmlentities($post['kategori']),
 				'nama_alat'  => htmlentities($post['title']),
 				'jumlah' => htmlentities($post['jml']),
+				'kondisi' => htmlentities($post['kondisi']),
 				'tgl_masuk' => date('Y-m-d H:i:s')
 			);
 
@@ -181,7 +182,7 @@ class Alat extends CI_Controller
 						'kode_alat' => $alat_id,
 						'id_kategori' => htmlentities($post['kategori']),
 						'nama_alat'  => htmlentities($post['title']),
-						'jumlah' => htmlentities($post['jml']),
+						'kondisi' => htmlentities($post['kondisi']),
 						'tgl_masuk' => date('Y-m-d H:i:s')
 					);
 				} else {
@@ -189,7 +190,7 @@ class Alat extends CI_Controller
 					$data = array(
 						'id_kategori' => htmlentities($post['kategori']),
 						'nama_alat'  => htmlentities($post['title']),
-						'jumlah' => htmlentities($post['jml']),
+						'kondisi' => htmlentities($post['kondisi']),
 						'tgl_masuk' => date('Y-m-d H:i:s')
 					);
 				}

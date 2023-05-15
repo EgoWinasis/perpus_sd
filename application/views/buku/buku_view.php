@@ -26,6 +26,9 @@
 
                         <button id="print_button" class="btn btn-success ">
                             <i class="fa fa-print"></i> Cetak Label</button>
+
+                        <a href="<?php echo base_url('cetak/buku') ?>" target="_blank"><button class="btn btn-warning"> <i class="fa fa-print"></i> Buku</button></a>
+                            
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -41,7 +44,7 @@
                                         <th>Penerbit</th>
                                         <th>Tahun Buku</th>
                                         <th>Stok Buku</th>
-                                        <th>Dipinjam</th>
+                                        <th>Kondisi</th>
                                         <th>Tanggal Masuk</th>
                                         <th style="width: 50px;">Cetak Label
                                             <input class="form-check-input" type="checkbox" id="checkAll">
@@ -60,17 +63,8 @@
                                             <td><?= $isi['penerbit']; ?></td>
                                             <td><?= $isi['thn_buku']; ?></td>
                                             <td><?= $isi['jml']; ?></td>
-                                            <td>
-                                                <?php
-                                                $id = $isi['kode_buku'];
-                                                $dd = $this->db->query("SELECT * FROM tbl_pinjam WHERE kode= '$id' AND status = 'Dipinjam'");
-                                                if ($dd->num_rows() > 0) {
-                                                    echo $dd->num_rows();
-                                                } else {
-                                                    echo '0';
-                                                }
-                                                ?>
-                                            </td>
+                                            <td><?= $isi['kondisi']; ?></td>
+                                            
                                             <td><?= $isi['tgl_masuk']; ?></td>
                                             <td class="text-center">
                                                 <div class="form-check">

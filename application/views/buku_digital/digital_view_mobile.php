@@ -3,9 +3,11 @@
 <head>
     <title>Sistem Informasi Perpustakaan Kampus Mengajar 5 </title>
     <link rel="icon" type="image/x-icon" href="<?php echo base_url('assets_style/image/km5getaskerep.jpg'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets_style/assets/dist/css/buku_digital.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets_style/assets/dist/css/buku_digital_mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="<?php echo base_url(); ?>assets_style/assets/bower_components/jquery/dist/jquery.min.js"></script>
-    <title>Buku Digital | Perpustakaan SDN Getaskerep 01</title>
+
+    <title>Buku Digital | Perpustakaan SDN Getaskerep 001</title>
 </head>
 
 <body class="gold">
@@ -43,7 +45,7 @@
             <div class="bookcase-content">
                 <div class="case-panel mode-2">
                     <div class="case-background">
-                        <?php for ($i = 0; $i < ceil(count($buku) / 8); $i++) : ?>
+                        <?php for ($i = 0; $i < ceil(count($buku) / 6); $i++) : ?>
                             <div class="case-row ">
                                 <div class="case-left"></div>
                                 <div class="case-mid"></div>
@@ -53,62 +55,107 @@
 
                         <!-- kondisi -->
                         <?php if (count($buku)  == 0) : ?>
-                            <div class="case-row ">
-                                <div class="case-left"></div>
-                                <div class="case-mid"></div>
-                                <div class="case-right"></div>
-                            </div>
-                            <div class="case-row ">
-                                <div class="case-left"></div>
-                                <div class="case-mid"></div>
-                                <div class="case-right"></div>
-                            </div>
-                            <div class="case-row ">
-                                <div class="case-left"></div>
-                                <div class="case-mid"></div>
-                                <div class="case-right"></div>
-                            </div>
-                            <div class="case-row ">
-                                <div class="case-left"></div>
-                                <div class="case-mid"></div>
-                                <div class="case-right"></div>
-                            </div>
+                            <?php for ($i = 1; $i <= 11; $i++) : ?>
+                                <div class="case-row ">
+                                    <div class="case-left"></div>
+                                    <div class="case-mid"></div>
+                                    <div class="case-right"></div>
+                                </div>
+                            <?php endfor ?>
                         <?php endif ?>
-                        <?php if (ceil(count($buku) / 8) == 1) : ?>
-                            <div class="case-row ">
-                                <div class="case-left"></div>
-                                <div class="case-mid"></div>
-                                <div class="case-right"></div>
-                            </div>
-                            <div class="case-row ">
-                                <div class="case-left"></div>
-                                <div class="case-mid"></div>
-                                <div class="case-right"></div>
-                            </div>
-                            <div class="case-row ">
-                                <div class="case-left"></div>
-                                <div class="case-mid"></div>
-                                <div class="case-right"></div>
-                            </div>
+                        <?php if (ceil(count($buku) / 6) == 1) : ?>
+                            <?php for ($i = 1; $i <= 10; $i++) : ?>
+                                <div class="case-row ">
+                                    <div class="case-left"></div>
+                                    <div class="case-mid"></div>
+                                    <div class="case-right"></div>
+                                </div>
+                            <?php endfor ?>
                         <?php endif ?>
-                        <?php if (ceil(count($buku) / 8) == 2) : ?>
-                            <div class="case-row ">
-                                <div class="case-left"></div>
-                                <div class="case-mid"></div>
-                                <div class="case-right"></div>
-                            </div>
-                            <div class="case-row ">
-                                <div class="case-left"></div>
-                                <div class="case-mid"></div>
-                                <div class="case-right"></div>
-                            </div>
+
+                        <!--  -->
+                        <?php if (ceil(count($buku) / 6) == 2) : ?>
+                            <?php for ($i = 1; $i <= 9; $i++) : ?>
+                                <div class="case-row ">
+                                    <div class="case-left"></div>
+                                    <div class="case-mid"></div>
+                                    <div class="case-right"></div>
+                                </div>
+                            <?php endfor ?>
                         <?php endif ?>
-                        <?php if (ceil(count($buku) / 8) == 3) : ?>
-                            <div class="case-row ">
-                                <div class="case-left"></div>
-                                <div class="case-mid"></div>
-                                <div class="case-right"></div>
-                            </div>
+
+                        <?php if (ceil(count($buku) / 6) == 3) : ?>
+                            <?php for ($i = 1; $i <= 8; $i++) : ?>
+                                <div class="case-row ">
+                                    <div class="case-left"></div>
+                                    <div class="case-mid"></div>
+                                    <div class="case-right"></div>
+                                </div>
+                            <?php endfor ?>
+                        <?php endif ?>
+
+                        <?php if (ceil(count($buku) / 6) == 4) : ?>
+                            <?php for ($i = 1; $i <= 7; $i++) : ?>
+                                <div class="case-row ">
+                                    <div class="case-left"></div>
+                                    <div class="case-mid"></div>
+                                    <div class="case-right"></div>
+                                </div>
+                            <?php endfor ?>
+                        <?php endif ?>
+                        <?php if (ceil(count($buku) / 6) == 5) : ?>
+                            <?php for ($i = 1; $i <= 6; $i++) : ?>
+                                <div class="case-row ">
+                                    <div class="case-left"></div>
+                                    <div class="case-mid"></div>
+                                    <div class="case-right"></div>
+                                </div>
+                            <?php endfor ?>
+                        <?php endif ?>
+                        <?php if (ceil(count($buku) / 6) == 6) : ?>
+                            <?php for ($i = 1; $i <= 5; $i++) : ?>
+                                <div class="case-row ">
+                                    <div class="case-left"></div>
+                                    <div class="case-mid"></div>
+                                    <div class="case-right"></div>
+                                </div>
+                            <?php endfor ?>
+                        <?php endif ?>
+                        <?php if (ceil(count($buku) / 6) == 7) : ?>
+                            <?php for ($i = 1; $i <= 4; $i++) : ?>
+                                <div class="case-row ">
+                                    <div class="case-left"></div>
+                                    <div class="case-mid"></div>
+                                    <div class="case-right"></div>
+                                </div>
+                            <?php endfor ?>
+                        <?php endif ?>
+                        <?php if (ceil(count($buku) / 6) == 8) : ?>
+                            <?php for ($i = 1; $i <= 3; $i++) : ?>
+                                <div class="case-row ">
+                                    <div class="case-left"></div>
+                                    <div class="case-mid"></div>
+                                    <div class="case-right"></div>
+                                </div>
+                            <?php endfor ?>
+                        <?php endif ?>
+                        <?php if (ceil(count($buku) / 6) == 9) : ?>
+                            <?php for ($i = 1; $i <= 2; $i++) : ?>
+                                <div class="case-row ">
+                                    <div class="case-left"></div>
+                                    <div class="case-mid"></div>
+                                    <div class="case-right"></div>
+                                </div>
+                            <?php endfor ?>
+                        <?php endif ?>
+                        <?php if (ceil(count($buku) / 6) == 10) : ?>
+                            <?php for ($i = 1; $i <= 1; $i++) : ?>
+                                <div class="case-row ">
+                                    <div class="case-left"></div>
+                                    <div class="case-mid"></div>
+                                    <div class="case-right"></div>
+                                </div>
+                            <?php endfor ?>
                         <?php endif ?>
 
                         <!--  -->
@@ -118,7 +165,7 @@
                         <?php $index = 1; ?>
                         <?php foreach ($buku as $isi) : ?>
 
-                            <?php if ($index == 1 || $index % 8 == 0) : ?>
+                            <?php if ($index == 1 || $index % 6 == 0) : ?>
                                 <div class="case-row ">
                                     <div class="case-wrapper">
                                     <?php endif; ?>
@@ -140,7 +187,7 @@
                                     </div>
 
 
-                                    <?php if ($index % 8 == 0 || $index == count($buku)) : ?>
+                                    <?php if ($index % 6 == 0 || $index == count($buku)) : ?>
                                     </div>
                                 </div>
                             <?php endif; ?>
@@ -150,7 +197,7 @@
                     </div>
 
                 </div>
-               
+
             </div>
         </div>
 

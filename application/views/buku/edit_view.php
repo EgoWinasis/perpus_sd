@@ -54,6 +54,13 @@
                                         <label>Judul Buku</label>
                                         <input type="text" class="form-control" required value="<?= $buku->title; ?>" name="title" placeholder="Contoh : Cara Cepat Belajar Pemrograman Web">
                                     </div>
+                                    <div class="form-group">
+                                        <label>Kondisi</label>
+                                        <select name="kondisi" class="form-control" required="required">
+                                            <option value="Layak" <?= $buku->kondisi == "Layak"? "Selected": ""?>>Layak</option>
+                                            <option value="Rusak" <?= $buku->kondisi == "Rusak"? "Selected": ""?>>Rusak</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
@@ -80,6 +87,7 @@
                                 <input type="hidden" name="edit" value="<?= $buku->id_buku; ?>">
                                 <input type="hidden" name="id_kategori_old" value="<?= $buku->id_kategori; ?>">
                                 <button type="submit" class="btn btn-primary btn-md">Submit</button>
+                            </div>
                         </form>
                         <a href="<?= base_url('data'); ?>" class="btn btn-danger btn-md">Kembali</a>
                     </div>

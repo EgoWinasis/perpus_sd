@@ -32,7 +32,8 @@
 	    <div class="col-md-12">
 	        <div class="box box-primary">
                 <div class="box-header with-border">
-
+				<a href="<?php echo base_url('cetak/pinjam_buku'); ?>" target="_blank"><button class="btn btn-warning"> <i class="fa fa-print"></i> Riwayat Pinjam</button></a>
+				<a href="<?php echo base_url('cetak/total_pinjam_buku'); ?>" target="_blank"><button class="btn btn-primary"> <i class="fa fa-print"></i> Total Pinjam</button></a>
                 </div>
 				<!-- /.box-header -->
 				<div class="box-body">

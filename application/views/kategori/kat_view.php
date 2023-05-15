@@ -66,6 +66,7 @@
 					<div class="col-sm-8">
 						<div class="box box-primary">
 							<div class="box-header with-border">
+							<a href="<?php echo base_url('cetak/kategori') ?>" target="_blank"><button class="btn btn-warning"> <i class="fa fa-print"></i> Kategori</button></a>
 							</div>
 							<!-- /.box-header -->
 							<div class="box-body">

@@ -49,7 +49,7 @@ function getJumlah($conn, $idSiswa)
             <div class="col-md-12">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-
+                    <a href="<?php echo base_url('cetak/kehadiran'); ?>" target="_blank"><button class="btn btn-warning"> <i class="fa fa-print"></i> Jumlah Kehadiran</button></a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">

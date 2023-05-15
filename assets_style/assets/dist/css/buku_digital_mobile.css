@@ -403,7 +403,7 @@ select {
 	float: left;
 	margin-top: 5px;
 	width: 50%;
-	
+	margin-left: 30%;
 }
 .nav-category select{
 	font-size: 16px;
@@ -615,7 +615,7 @@ select {
 	position: relative;
 	height: 100%;
 	margin: 0 auto;
-	padding-left: 30px;
+	padding-left: 10%;
 }
 .book-content {
 	width: 120px;
@@ -806,7 +806,7 @@ select {
 
 .book-outer-title.mode-2 {
 	width: 128px;
-	margin-left: -65px
+	margin-left: -50px
 }
 
 .book-outer-title.mode-3 {
@@ -3275,6 +3275,6 @@ body.yellow .nav-search-btn.cancel-icon {
 	}
 	.book-outer-title.mode-2 {
 		width: 100px;
-		margin-left: -65px
+		margin-left: -50px
 	}
   }
